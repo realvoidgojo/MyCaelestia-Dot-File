@@ -8,8 +8,8 @@ function fish_greeting
         # Select a random image
         set random_image $images[(random 1 (count $images))]
         
-        # Display the image using chafa with terminal-friendly settings
-        chafa --size=60x10 --colors=256 "$random_image"
+        # Display the image using chafa with improved quality settings
+        chafa --size=60x10 --colors=truecolor --dither=ordered --optimize=0 --work=9 "$random_image"
     else
         # Fallback to original ASCII art if no images found
         echo -ne '\x1b[38;5;16m'  # Set colour to primary
