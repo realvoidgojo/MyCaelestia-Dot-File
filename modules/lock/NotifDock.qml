@@ -47,13 +47,14 @@ ColumnLayout {
             sourceComponent: ColumnLayout {
                 spacing: Appearance.spacing.large
 
-                Image {
+                AnimatedImage {
                     asynchronous: true
-                    source: `file://${Quickshell.shellDir}/assets/dino.png`
+                    source: `file://${Quickshell.shellDir}/assets/fight.gif`
                     fillMode: Image.PreserveAspectFit
                     sourceSize.width: root.lock.animating ? 0 : clipRect.width * 0.8
+                    playing: noNotifs.opacity > 0
 
-                    layer.enabled: true
+                    layer.enabled: false
                     layer.effect: Colouriser {
                         colorizationColor: Colours.palette.m3outlineVariant
                         brightness: 1
